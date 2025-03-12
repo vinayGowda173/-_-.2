@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <style>
+    
+    body {
+        font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e8f5e9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #333;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+    }
+    .home-btn{
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+
+   
+    .project-card {
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer; 
+    }
+
+   
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+   
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+   
+    .project-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .project-info h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .project-info p {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .project-info a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .project-info a:hover {
+      background-color: #45a049; 
+    }
+
+    
+    .project-card:nth-child(1) {
+      border-color: #FF5733;
+    }
+
+    .project-card:nth-child(2) {
+      border-color: #FFC300; 
+    }
+
+    .project-card:nth-child(3) {
+      border-color: #33C1FF;
+    }
+
+   
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .projects-container {
+        grid-template-columns: 1fr; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Projects</h1>
+  <div class="projects-container">
+  
+    <div class="project-card">
+      <img src="farmer.jpg" alt="Project 1">
+      <div class="project-info">
+        <h3>The farmer's assistant</h3>
+        <p>Farmer's Assistant is a digital platform designed to assist farmers with various aspects of agriculture. It provides tools for managing crops, monitoring weather conditions, optimizing irrigation, and offering advice on pest control. The system may also include features such as market price tracking, agricultural news, and access to expert consultations. Its goal is to improve farm productivity, reduce manual labor, and help farmers make data-driven decisions for better yields and profitability..</p>
+        <a href="https://localhost:3000/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="weather.jpg" alt="Project 2">
+      <div class="project-info">
+        <h3>Weather App</h3>
+        <p>Weather App is a user-friendly application built with JavaScript that provides real-time weather updates for any location. It fetches data from a weather API and displays current conditions such as temperature, humidity, wind speed, and forecasts. The app features an intuitive interface, allowing users to search for weather by city or geolocation. With the use of JavaScript, HTML, and CSS, this app delivers a smooth and responsive experience, making it easy for users to access weather information quickly and efficiently..</p>
+        <a href="https://vinay18weather.netlify.app/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+  
+    <div class="project-card">
+      <img src="bmi.jpg" alt="Project 3">
+      <div class="project-info">
+        <h3>BMI Index calculator</h3>
+        <p>BMI Index Calculator is a simple web application built with JavaScript that allows users to calculate their Body Mass Index (BMI) based on their height and weight. The app provides instant feedback, categorizing the BMI into different ranges such as underweight, normal weight, overweight, or obese. It features an intuitive interface with input fields for weight and height, and displays the calculated BMI along with health recommendations. Using JavaScript for real-time calculations and validation, this app offers a quick and easy way to track personal health metrics.</p>
+        <a href="https://vinaybmi.netlify.app/" target="_blank">View Project</a>
+      </div>
+      
+    </div>
+  </div>
+  <a href="index.html" class="home-btn" style="background-color: #4CAF50;">Return to Home</a>
+
+</body>
+</html>

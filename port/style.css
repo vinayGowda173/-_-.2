@@ -1,0 +1,121 @@
+body{
+    background-color:#c9d7d6  ;
+    padding: 20px;
+    color: black;
+    line-height: 1.5rem;
+}
+.contents{
+    margin: 0;
+    background-color:rgb(196, 178, 220) ;
+    padding-left: 55%;
+}
+
+.nav-button {
+    background-color: #4CAF50; 
+    color: black; 
+    border: none; 
+    padding: 15px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 10px 5px; 
+    border-radius: 8px;
+    cursor: pointer; 
+    transition: 0.3s ease; 
+}
+
+
+.nav-button:hover {
+    background-color: #45a049; 
+    transform: scale(1.1); 
+}
+
+
+.nav-button:active {
+    background-color: #3e8e41; 
+    transform: scale(1.05); 
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+#ph{
+    margin-top: 50px;
+    margin-left: 0%;
+   width: 30%;
+   height: 60%;
+   border-radius: 50%;
+    
+
+}
+.inform
+{
+   margin-left: 40%;
+    margin-top: 10%;
+    border-color: blue;
+    position: absolute;
+}
+
+
+.language{
+    position: absolute;
+    padding-left: 30%;
+    margin-top: 40%;
+}
+h3{
+    padding-left: 40%;
+}
+#ph1{
+    width: 20%;
+    height: 60%; 
+    margin-top: 40%;
+    position: absolute;
+    
+}
+h4{
+padding-left: 50%;
+font-size: 30px;
+}
+
+    
+#c{
+    color:black;
+    position: absolute;
+    width: 30%;
+}
+#java{
+    margin-left: 33%;
+    position: absolute;
+    width: 30%;
+}
+#javascript{
+    
+    margin-left: 65%;
+    position: absolute;
+    width: 30%;
+}
+#c:hover{
+    border-style: double;
+    font-size:medium ;
+    background-color: hsl(0, 0%, 60%);
+    border-radius: 10px;
+    }
+ #java:hover{   
+    border-style: double;
+    background-color: hsl(0, 0%, 60%);
+    font-size:medium ;
+    border-radius: 10px;
+ }
+ #javascript:hover{   border-style: double;
+    background-color: hsl(0, 0%, 60%);
+    font-size:medium ;
+    border-radius: 10px;
+ }
+ #about1{
+    line-height: 1.5rem;
+ }
+ 
+ 
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates</title>
+  <style>
+  
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #333;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+  
+    .documents-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-gap: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px; 
+    }
+
+   
+    .document {
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    /* Hover effect */
+    .document:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .document:hover .caption {
+      background-color: #4CAF50; 
+      color: #fff; 
+    }
+
+   
+    .document img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+  
+    .caption {
+      text-align: center;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #f2f2f2; 
+      color: #333;
+      font-weight: bold;
+      border-top: 1px solid #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+   
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); 
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 90%;
+      max-height: 90%;
+      overflow: auto;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+    }
+
+    
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: #aaa;
+      font-size: 40px;
+      font-weight: bold;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+    }
+
+   
+    .document:nth-child(1) {
+      border-color: #FF5733; 
+    }
+
+    .document:nth-child(2) {
+      border-color: #FFC300; 
+    }
+
+    .document:nth-child(3) {
+      border-color: #33C1FF; 
+    }
+
+    .document:nth-child(4) {
+      border-color: #8E44AD; 
+    }
+
+    .document:nth-child(5) {
+      border-color: #2ECC71; 
+    }
+
+    .document:nth-child(6) {
+      border-color: #E74C3C; 
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .documents-container {
+        grid-template-columns: repeat(3, 1fr); 
+      }
+    }
+
+    @media (max-width: 480px) {
+      .documents-container {
+        grid-template-columns: repeat(3, 1fr); 
+      }
+      }
+      .home-btn{
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        background-color: #2ECC71;
+      }
+  </style>
+</head>
+<body>
+
+  <h1>My Certificates</h1>
+  <div class="documents-container">
+   
+    <div class="document" onclick="openModal('nptel.png', 'DSA in Java NPTEL')">
+      <img src="nptel.png" alt="Certificate 1">
+      <div class="caption">DSA in Java NPTEL</div>
+    </div>
+    
+    <div class="document" onclick="openModal('cer1 (1).png', 'DSA in Java')">
+      <img src="cer1 (1).png" alt="Certificate 2">
+      <div class="caption">DSA in Java</div>
+    </div>
+  
+    <div class="document" onclick="openModal('cer2.png', 'AI and ML')">
+      <img src="cer2.png" alt="Certificate 3">
+      <div class="caption">AI and ML</div>
+    </div>
+   
+    <div class="document" onclick="openModal('tata.png', 'Job simulation TATA group')">
+      <img src="tata.png" alt="Certificate 4">
+      <div class="caption">Job simulation TATA group</div>
+    </div>
+  
+    <div class="document" onclick="openModal('uiux.png', 'UI/UX certificate')">
+      <img src="uiux.png" alt="Certificate 5">
+      <div class="caption">UI/UX certificate</div>
+    </div>
+  
+    <div class="document" onclick="openModal('aws.png', 'AWS job simulation')">
+      <img src="aws.png" alt="Certificate 6">
+      <div class="caption">AWS job simulation</div>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Certificate Image">
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(imageSrc, captionText) {
+      document.getElementById("modalImage").src = imageSrc;
+      document.getElementById("modalCaption").innerText = captionText;
+      document.getElementById("myModal").style.display = "flex"; 
+    }
+
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none"; 
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("myModal")) {
+        closeModal();
+      }
+    }
+  </script>
+ <a href="index.html" class="home-btn">Return to Home</a>
+</body>
+</html>
